@@ -2,7 +2,6 @@ var gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
   minifyCss = require('gulp-minify-css'),
   autoprefixer = require('gulp-autoprefixer'),
   plumber = require('gulp-plumber'),
@@ -16,7 +15,7 @@ gulp.task('cssConcat', function() {
     .pipe(csslint.reporter())
     .pipe(autoprefixer())
     .pipe(concat('all.css'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('cssMin', function() {
@@ -24,21 +23,21 @@ gulp.task('cssMin', function() {
     .pipe(autoprefixer())
     .pipe(minifyCss())
     .pipe(concat('all.min.css'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('jsConcat', function() {
   gulp.src('./src/js/*.js')
     .pipe(plumber())
     .pipe(concat('all.js'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('jsMin', function() {
   gulp.src('./src/js/*.js')
     .pipe(uglify())
     .pipe(concat('all.min.js'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('compressImages', function() {
@@ -51,7 +50,7 @@ gulp.task('compressImages', function() {
 
 gulp.task('fonts', function() {
   gulp.src('./src/fonts/*.*')
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./dist/fonts'));
 });
 
 gulp.task('webserver', function() {
@@ -68,6 +67,7 @@ gulp.task('watch', function() {
   gulp.watch('./src/css/*.css', ['cssConcat']);
   gulp.watch('./src/js/*.js', ['jsConcat']);
   gulp.watch('./src/fonts/*.*', ['fonts']);
+  gulp.watch('./src/img/*.*', ['compressImages']);
 });
 
 gulp.task('default', ['fonts', 'cssConcat', 'jsConcat', 'watch', 'webserver']);
