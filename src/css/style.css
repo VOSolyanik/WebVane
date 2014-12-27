@@ -476,7 +476,7 @@ body{
 	transform: translateY(-10px);
 }
 
-@media screen and (max-width: 840px){
+@media screen and (max-width: 840px) and (min-width: 641px){
 	.tech-item{
 		float: left;
 		width: 26.8%;
@@ -526,6 +526,32 @@ body{
 	}
 	.left{
 		margin-bottom: 26px;
+	}
+	.menu-item{
+		margin-bottom: 20px;
+	}
+	.tech-item{
+		float: left;
+		width: 42%;
+		padding: 0 3%;
+		padding-bottom: 200px;
+		margin-bottom: -200px;	}
+	.tech-item:nth-child(2n){
+		border-right: 1px solid #76cae0;
+	}
+	.copyright{
+		line-height: 20px;
+	}
+}
+@media screen and (max-width: 520px){
+	.tech-item{
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding: 0 5%;
+		padding-bottom: 200px;
+		margin-bottom: -200px;
+		border-left: none;
 	}
 }
 
