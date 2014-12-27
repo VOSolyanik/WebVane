@@ -49,6 +49,10 @@ gulp.task('compressImages', function() {
     .pipe(gulp.dest('./dist/img'));
 });
 
+gulp.task('fonts', function() {
+  gulp.src('./src/fonts/*.*')
+    .pipe(gulp.dest('./dist'));
+});
 
 gulp.task('webserver', function() {
   gulp.src('./')
@@ -63,6 +67,7 @@ gulp.task('build', ['cssMin', 'jsMin', 'compressImages']);
 gulp.task('watch', function() {
   gulp.watch('./src/css/*.css', ['cssConcat']);
   gulp.watch('./src/js/*.js', ['jsConcat']);
+  gulp.watch('./src/fonts/*.*', ['fonts']);
 });
 
-gulp.task('default', ['cssConcat', 'jsConcat', 'watch', 'webserver']);
+gulp.task('default', ['fonts', 'cssConcat', 'jsConcat', 'watch', 'webserver']);
