@@ -18,11 +18,17 @@ gulp.task('cssConcat', function() {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('cssMin', function() {
+gulp.task('cssMin',['cssIE'], function() {
   gulp.src('./src/css/*.css')
     .pipe(autoprefixer())
     .pipe(minifyCss())
     .pipe(concat('all.min.css'))
+    .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('cssIE', function() {
+  gulp.src('./src/css/ie/*.css')
+    .pipe(autoprefixer())
     .pipe(gulp.dest('./dist/css'));
 });
 
@@ -36,7 +42,7 @@ gulp.task('jsConcat', function() {
 gulp.task('jsMin', function() {
   gulp.src('./src/js/*.js')
     .pipe(uglify())
-    .pipe(concat('all.min.js'))
+    // .pipe(concat('all.min.js'))
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -70,4 +76,4 @@ gulp.task('watch', function() {
   gulp.watch('./src/img/*.*', ['compressImages']);
 });
 
-gulp.task('default', ['fonts', 'cssConcat', 'jsConcat', 'watch', 'webserver']);
+gulp.task('default', ['fonts', 'compressImages', 'cssConcat', 'cssIE', 'jsMin', 'watch', 'webserver']);

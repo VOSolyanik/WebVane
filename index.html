@@ -1,14 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>WebWane</title>
 	<link rel="stylesheet" href="dist/css/all.css">
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" href="dist/css/ie8.css">
+	<![endif]-->
+	<!--[if IE]>
+		<script src="dist/js/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
 	<header class="header">
 		<div class="wrapper clearfix">
-			<a href="/" class="logo"><i class="icon icon-logo"></i></a>
+			<a href="index.html" class="logo"><i class="icon icon-logo"></i></a>
 			<ul class="phones-list">
 				<li class="phones-item clearfix">
 					<i class="icon icon-usa-flag"></i>
@@ -40,7 +46,7 @@
 					</a>
 				</li>
 				<li class="balls-item">
-					<a class="web" href="#">
+					<a class="web" href="webAppDev.html">
 						<i class="icon icon-balls icon-web"></i>
 						<span>web applications development</span>
 					</a>
@@ -51,7 +57,7 @@
 						<span>mobile applications development</span>
 					</a>
 				</li>
-				<li class="balls-item">
+				<li class="balls-item last-child">
 					<a class="webvane" href="#">
 						<i class="icon icon-balls icon-webvane"></i>
 						<span>web vane framework</span>
@@ -109,7 +115,7 @@
 					<h5 class="tech-item-title">Oracle, MS SQL, My SQL, Postgress, MongoDB</h5>
 					<p class="tech-item-text"></p>
 				</li>
-				<li class="tech-item">
+				<li class="tech-item last-child">
 					<i class="tech-icon tech-other"></i>
 					<h5 class="tech-item-title">Other technologies</h5>
 					<p class="tech-item-text">Pellentesque urna turpis, placerat sed aliquet in, fringilla atnisi. Donec nec dui enim. Cras neque turpis, volutpat nec dignissim id, cursus porttitor ligula</p>
@@ -138,8 +144,8 @@
 		</div>
 	</section>
 	<footer class="footer">
-		<div class="wrapper claeafix">
-			<ul class="social-list">
+		<div class="wrapper clearfix">
+			<ul class="social-list clearfix">
 				<li class="social-item"><a href="#"><i class="social-icon social-facebook"></i></a></li>
 				<li class="social-item"><a href="#"><i class="social-icon social-twitter"></i></a></li>
 				<li class="social-item"><a href="#"><i class="social-icon social-googleplus"></i></a></li>
@@ -147,5 +153,8 @@
 			<p class="copyright">Copyright © 2014 <a href="#">Company, Inc.</a> All rights reserved.</p>
 		</div>
 	</footer>
+	<!--[if lt IE 10]>
+		<script type="text/javascript" src="dist/js/placeholder.js"></script>
+	<![endif]-->
 </body>
 </html>

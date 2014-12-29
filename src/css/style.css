@@ -203,18 +203,32 @@ body{
 .banner{
 	min-height: 410px;
 	background-image: url('../img/bg-banner.jpg');
-	background-position:  50% 28%;
+	background-position:  50% 20%;
 	background-size: 100% auto;
-	background-color: rgb(27,167,203);
-	background-blend-mode: multiply;
+	background-repeat: no-repeat;
 }
 .banner-info{
 	margin: 0 300px 0 0;
 	padding: 12% 10% 0 0;
 	color: #fff;
 }
+.banner_text{
+	height: 410px;
+	background-image: url('../img/bg-banner2.jpg');
+	background-position:  50% 0;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.banner_text .banner-info{
+	max-width: 550px;
+	padding: 150px 0 0;
+}
+.banner_text .banner-info .title{
+	line-height: 60px;
+	font-size: 60px;
+}
 .title{
-	margin-bottom: 25px;
+	margin: 0 0 25px;
 	font-family: 'Roboto Bold', Arial, Helvetica, sans-serif;
 	font-size: 40px;
 	line-height: 40px;
@@ -228,7 +242,7 @@ body{
 }
 .balls-list{
 	float: right;
-	width: 300px;
+	max-width: 300px;
 	margin: 0;
 	padding: 30px 0 0;
 	list-style: none;
@@ -239,7 +253,7 @@ body{
 .balls-item a{
 	display: block;
 	padding: 18px 20px 17px 26px;
-	height: 45px;
+	min-height: 45px;
 	line-height: 22px;
 	font-family: "Lato Regular", Arial, Helvetica, sans-serif;
 	text-decoration: none;
@@ -274,6 +288,23 @@ body{
 	line-height: 45px;
 }
 
+.content{
+	padding: 80px 0 160px;
+	color: #515150;
+}
+.content .title{
+	margin: 0 0 30px;
+	font-family: 'Lato Regular', Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+.content .text{
+	line-height: 28px;
+	font-family: 'Lato Regular', Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
 .our-team{
 	padding: 80px 0;
 }
@@ -295,8 +326,9 @@ body{
 	position: relative;
 	float: right;
 	width: 364px;
-	height: 163px;
+	margin-right: 5px;
 	max-width: 364px;
+	height: 163px;
 	border: 1px solid #404040;
 	text-align: center;
 }
@@ -319,7 +351,7 @@ body{
 }
 .technologies .title,
 .contact-us .title{
-	margin-bottom: 45px;
+	margin: 0 0 45px;
 	text-transform: uppercase;
 	color: #fff;
 	font-size: 30px;
@@ -439,6 +471,9 @@ body{
 	vertical-align: middle;
 	height: 100%;
 }
+.placeholder{
+	color: grey;
+}
 .contact-form .btn{
 	float: right;
 	padding: 0;
@@ -446,13 +481,14 @@ body{
 }
 
 .footer{
-	padding: 40px 0;
+	padding: 40px 0 35px;
 }
 .copyright{
 	margin:0 215px 0 0;
 	line-height: 40px;
 	font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
 	font-size: 14px;
+	color: #666;
 }
 .copyright a{
 	text-decoration: none;
@@ -476,7 +512,7 @@ body{
 	transform: translateY(-10px);
 }
 
-@media screen and (max-width: 840px) and (min-width: 641px){
+@media screen and (max-width: 840px) and (min-width: 671px){
 	.tech-item{
 		float: left;
 		width: 26.8%;
@@ -501,7 +537,7 @@ body{
 		margin: 0 auto 50px;
 	}
 }
-@media screen and (max-width: 640px){
+@media screen and (max-width: 670px){
 	.banner{
 		background-position:  50% bottom;
 		background-repeat: no-repeat;
@@ -511,6 +547,10 @@ body{
 	.banner-info{
 		margin: 0;
 		padding: 10% 0;
+	}
+	.banner_text .banner-info{
+		width: 100%;
+		padding: 150px 0 0;
 	}
 	.balls-list{
 		float: none;
@@ -532,7 +572,7 @@ body{
 	}
 	.tech-item{
 		float: left;
-		width: 42%;
+		width: 43%;
 		padding: 0 3%;
 		padding-bottom: 200px;
 		margin-bottom: -200px;	}
@@ -552,6 +592,45 @@ body{
 		padding-bottom: 200px;
 		margin-bottom: -200px;
 		border-left: none;
+	}
+	.tech-item-title{
+		font-size: 36px;
+	}
+	.tech-item-text{
+		font-size: 24px;
+		line-height: 24px;
+	}
+}
+@media screen and (max-width: 480px){
+	.logo,
+	.phones-list,
+	.nav{
+		float: none;
+	}
+	.phones-list{
+		padding: 20px 0;
+	}
+	.banner_text .banner-info{
+		padding: 60px 0;
+	}
+	.banner_text .banner-info .title{
+		font-size: 45px;	
+	}
+	.balls-item:last-child a span{
+		line-height: 22px;
+	}
+	.contact-now{
+		width: 100%;
+	}
+	.contact-now .btn{
+		padding: 0 20px;
+	}
+	.copyright{
+		margin: 0;
+	}
+	.social-list{
+		float: none;
+		margin: 0 auto 20px;
 	}
 }
 
