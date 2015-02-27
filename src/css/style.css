@@ -455,9 +455,9 @@ body{
 }
 .captcha-place{
 	position: absolute;
-	top: 0;
-	right: 0;
-	height: 52px;
+	top: 3px;
+	right: 3px;
+	height: 46px;
 	width: 100px;
 	overflow: hidden;
 	border-top-right-radius: 2px;
