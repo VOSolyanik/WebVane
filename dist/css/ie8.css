@@ -1,0 +1,19 @@
+.icon{
+	background-image: url('../img/sprite_fluger.png');
+}
+.wrapper,
+.phones-item,
+.menu-list,
+.tech-list,
+.contact-form{
+	overflow: hidden;
+}
+.banner{
+	background-color: #1ba7cb;
+}
+.tech-item.last-child{
+	border-right: 1px solid #76cae0;
+}
+.balls-item.last-child a span{
+	line-height: 45px;
+}
