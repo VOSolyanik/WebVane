@@ -215,8 +215,8 @@ body{
 .banner_text{
 	height: 410px;
 	background-image: url('../img/bg-banner2.jpg');
-	background-position:  50% 0;
-	background-size: auto 100%;
+	background-position:  50% 50%;
+	background-size: 100% auto;
 	background-repeat: no-repeat;
 }
 .banner_text .banner-info{
@@ -510,6 +510,11 @@ body{
 }
 .social-item a:hover{
 	transform: translateY(-10px);
+}
+@media screen and (max-width: 1450px){
+	.banner_text{
+		background-size: auto 100%;
+	}
 }
 
 @media screen and (max-width: 840px) and (min-width: 671px){
